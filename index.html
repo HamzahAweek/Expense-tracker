@@ -3,9 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <nav>
+            <ul>
+                <li><a href="#addTransaction">Add Transaction</a></li>
+                <li><a href="#totalBudget">Total Budget</a></li>
+                <li><a href="#transactionHistory">Transaction History</a></li>
+                <li><a href="#filters">Filters</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <section id="addTransaction" class="transaction-form">
+            <h2>Add New Transaction</h2>
+            <form id="transactionForm">
+                <input type="number" id="amount" placeholder="Amount" required>
+                <select id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <input type="date" id="date" required>
+                <input type="text" id="notes" placeholder="Notes (optional)">
+                <button type="submit">Add Transaction</button>
+            </form>
+        </section>
+
+        <section id="totalBudget" class="total-budget">
+            <h2>Total Budget: <span id="totalAmount">$0</span></h2>
+        </section>
+
+        <section id="transactionHistory" class="transaction-list">
+            <h2>Transaction History</h2>
+            <ul id="transactions"></ul>
+        </section>
+
+        <section id="filters" class="filters">
+            <h2>Filter Transactions</h2>
+            <input type="number" id="minPrice" placeholder="Min Price">
+            <input type="number" id="maxPrice" placeholder="Max Price">
+            <select id="filterType">
+                <option value="">All</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <input type="date" id="filterDate">
+            <input type="text" id="filterNotes" placeholder="Search Notes">
+            <button id="applyFilters">Apply Filters</button>
+        </section>
+    </div>
     
+    <script src="script.js"></script>
 </body>
 </html>
